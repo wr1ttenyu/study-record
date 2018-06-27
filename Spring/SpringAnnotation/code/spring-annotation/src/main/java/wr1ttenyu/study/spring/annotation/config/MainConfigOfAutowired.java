@@ -3,10 +3,7 @@ package wr1ttenyu.study.spring.annotation.config;
 import org.springframework.beans.factory.Aware;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
 
 import wr1ttenyu.study.spring.annotation.dao.BookDao;
 
@@ -44,7 +41,8 @@ import wr1ttenyu.study.spring.annotation.dao.BookDao;
  */
 @Configuration
 @ComponentScan({ "wr1ttenyu.study.spring.annotation.service", "wr1ttenyu.study.spring.annotation.dao",
-        "wr1ttenyu.study.spring.annotation.service.controller" })
+        "wr1ttenyu.study.spring.annotation.controller" })
+@PropertySource({"classpath:person.properties"})
 public class MainConfigOfAutowired {
 
     @Primary

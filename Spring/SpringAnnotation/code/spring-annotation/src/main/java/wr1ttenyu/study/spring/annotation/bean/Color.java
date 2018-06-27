@@ -11,10 +11,12 @@ public class Color implements InitializingBean, DisposableBean {
 
     public Color() {
         super();
+        System.out.println("1 Color constructor is invoking ....");
     }
 
     public Color(String name, Integer order) {
         super();
+        System.out.println("2 Color constructor is invoking ....");
         this.name = name;
         this.order = order;
     }
@@ -38,13 +40,10 @@ public class Color implements InitializingBean, DisposableBean {
     @Override
     public void destroy() throws Exception {
         System.out.println("Implement DisposableBean ---> destory!");
-        
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("Implement InitializingBean ---> afterPropertiesSet init!");
-        
     }
-
 }

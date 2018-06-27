@@ -10,13 +10,13 @@ import wr1ttenyu.study.spring.annotation.config.MainConfigOfAOP;
 
 class AopTest {
 
-ApplicationContext applicationContext;
+    ApplicationContext applicationContext;
     
     @BeforeEach
     public void initMethod() {
         applicationContext = new AnnotationConfigApplicationContext(
                 MainConfigOfAOP.class);
-    } 
+    }
     
     @Test
     public void testAopAnnotation() {
