@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: microservicecloud-user-provider
+    datasource:
+        username: root
+        password: a198842519
+        url: jdbc:mysql://47.254.36.19:3306/test?useSSL=false
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+
+eureka:
+  client:
+    service-url:
+      # 集群配置
+      # defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservicecloud-user-8004
+    prefer-ip-address: true
+
+info:
+  app.name: microservicecloud-user-8004
+  company.name: wr1ttenyu.cn
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

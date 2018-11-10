@@ -1,0 +1,13 @@
+server:
+  port: 8002
+
+logging:
+  level:
+    root: info
+#logging.level.wr1ttenyu.study.springboot.demo.curd.dao=debug
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka

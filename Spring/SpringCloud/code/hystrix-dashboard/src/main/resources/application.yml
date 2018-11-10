@@ -1,0 +1,7 @@
+server:
+  port: 9001
+
+logging:
+  level:
+    root: info
+#logging.level.wr1ttenyu.study.springboot.demo.curd.dao=debug

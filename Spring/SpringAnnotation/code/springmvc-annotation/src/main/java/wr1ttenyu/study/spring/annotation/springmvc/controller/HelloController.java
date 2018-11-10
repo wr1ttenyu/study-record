@@ -15,6 +15,12 @@ public class HelloController {
     @ResponseBody
     @GetMapping("/hello")
     public String hello() {
+        System.out.println(Thread.currentThread() + " processing... ==> " + System.currentTimeMillis());
         return helloService.hello();
+    }
+
+    @GetMapping("/success")
+    public String success() {
+        return "success";
     }
 }

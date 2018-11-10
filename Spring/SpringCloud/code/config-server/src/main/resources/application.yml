@@ -1,0 +1,23 @@
+server:
+  port: 9595
+
+spring:
+    application:
+        name: config-server
+    cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/wr1ttenyu/microservicecloud-config.git
+
+eureka:
+  client:
+    service-url:
+      # 集群配置
+      # defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://localhost:7001/eureka
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    instance-id: config-server
+    prefer-ip-address: true

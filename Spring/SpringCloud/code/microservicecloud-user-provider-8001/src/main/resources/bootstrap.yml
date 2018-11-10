@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      name: microservicecloud-user-service-config
+      label: master
+      uri: http://localhost:9595

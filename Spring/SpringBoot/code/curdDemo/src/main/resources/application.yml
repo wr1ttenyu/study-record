@@ -1,0 +1,15 @@
+spring:
+    datasource:
+        username: root
+        password: a198842519
+        url: jdbc:mysql://47.254.36.19:3306/test?useSSL=false
+        driver-class-name: com.mysql.jdbc.Driver
+        #initialization-mode: always
+        schema: classpath:init.sql
+        type: com.alibaba.druid.pool.DruidDataSource
+    redis:
+      host: 47.254.36.19
+      port: 6379
+      password: Aa198842519
+    rabbitmq:
+      host: 47.254.36.19

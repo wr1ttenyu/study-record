@@ -1,0 +1,23 @@
+spring:
+    application:
+        name: microservicecloud-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      # 集群配置
+      # defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservicecloud-zuul-9527
+    prefer-ip-address: true
+
+zuul:
+  routes:
+    user.serviceId: microservicecloud-user-provider
+    user.path: /user/**
+  # 屏蔽所有服务名访问路径
+  # ignored-services: "*"
+  # ignored-services: microservicecloud-user-provider
+  prefix: /wr1ttenyu
+

@@ -1,0 +1,12 @@
+person:
+  lastName: wr1ttenyu
+  age: 18
+  boss: true
+  birth: 2017/12/12
+  mapInfo: {k1: v1, k2: v2}
+  lstInfo:
+    - item1
+    - item2
+  dog:
+    name: seven
+    age: 1

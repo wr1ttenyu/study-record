@@ -1,0 +1,7 @@
+# Application Context Initializers
+org.springframework.context.ApplicationContextInitializer=\
+wr1ttenyu.study.springboot.demo.curd.listener.MySpringApplicationContextInitializer
+
+# Application Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+wr1ttenyu.study.springboot.demo.curd.listener.MySpringApplicationRunListener
