@@ -1,12 +1,16 @@
 package writtenyu.study.javase;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import writtenyu.study.javase.bean.SubUser;
 import writtenyu.study.javase.bean.User;
 import writtenyu.study.javase.threadPoolMonitor.ExecutorsUtil;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author wr1ttenyu
@@ -16,8 +20,17 @@ public class DemoApplication implements Runnable {
 
     private static int k = 0;
 
-    public static void main(String[] args) {
-        ExecutorsUtil executorsUtil = new ExecutorsUtil(5, 6,
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExecutorsUtil.class);
+
+    private static final ThreadLocal<DateFormat> df = new ThreadLocal<DateFormat>() {
+        @Override
+        protected DateFormat initialValue() {
+            return new SimpleDateFormat("yyyy-MM-dd");
+        }
+    };
+
+    public static void main(String[] args) throws IOException {
+        /*ExecutorsUtil executorsUtil = new ExecutorsUtil(5, 6,
                 1000, TimeUnit.SECONDS, new ArrayBlockingQueue(100), "testsync");
 
         for (int i = 0; i < 10; i++) {
@@ -28,6 +41,38 @@ public class DemoApplication implements Runnable {
             Thread.currentThread().sleep(100000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }*/
+        /*AtomicInteger atomicInteger = new AtomicInteger(1);
+        atomicInteger.getAndAdd(1);
+
+        Timer timer = new Timer();
+
+        Random random = new Random();
+        random.nextInt();
+
+        ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(5);*/
+
+        TreeMap<String, String> stringStringTreeMap = new TreeMap<>();
+        ConcurrentHashMap<String,String> stringStringConcurrentHashMap = new ConcurrentHashMap<>();
+        stringStringConcurrentHashMap.put(null, null);
+
+
+        SubUser subUser = new SubUser();
+        subUser.setT(new Date());
+    }
+
+    static class Singleton {
+        private User helper = null;
+
+        public User getHelper() {
+            System.out.println(Singleton.this);
+            if (helper == null) {
+                synchronized (this) {
+                    if (helper == null)
+                        helper = new User();
+                }
+            }
+            return helper;
         }
     }
 

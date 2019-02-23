@@ -18,5 +18,16 @@ public class App {
             String s = a[i];
             System.out.println(s);
         }
+
+        ArrayList test2 = null;
+
+            test2.get(0);
+        /*try {
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println(e.getStackTrace());
+        }*/
+
+
     }
 }

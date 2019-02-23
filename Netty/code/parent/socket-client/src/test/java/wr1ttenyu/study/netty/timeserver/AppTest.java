@@ -7,6 +7,7 @@ import org.msgpack.MessagePack;
 import wr1ttenyu.study.netty.timeserver.bean.User;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
 
 import static org.junit.Assert.assertTrue;
 
@@ -58,6 +59,29 @@ public class AppTest {
     @Test
     public void tempTest() throws IOException {
         System.out.println(tableSizeFor(19));
+    }
+
+    @Test
+    public void tempSlice() throws IOException {
+        /*ByteBuffer byteBuffer = ByteBuffer.allocate(100);
+        byteBuffer.put("a".getBytes());
+        byteBuffer.flip();
+        System.out.println(byteBuffer.remaining());
+        ByteBuffer slice = byteBuffer.slice();
+        System.out.println(slice.remaining());
+        slice.put(2, new Byte("1"));*/
+        ByteBuf byteBuf = Unpooled.buffer(100);
+        byteBuf.writeBytes("abcdefg".getBytes());
+        ByteBuffer byteBuffer = byteBuf.nioBuffer();
+        System.out.println(byteBuffer.remaining());
+        System.out.println(byteBuffer.position());
+        System.out.println(byteBuffer.limit());
+        System.out.println(byteBuffer.capacity());
+        for (int i = 0; i < 7; i++) {
+            System.out.println(byteBuffer.get());
+        }
+        System.out.println(byteBuffer.position());
+        System.out.println(byteBuffer.limit());
     }
 
     static final int tableSizeFor(int cap) {

@@ -1,0 +1,11 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- service implementation, as same as regular local bean-->
+    <bean id="demoService2" class="wr1ttenyu.study.dubbo.service.impl.Demo2ServiceImpl"/>
+    <!-- declare the service interface to be exported -->
+    <dubbo:service interface="wr1ttenyu.study.dubbo.service.api.DemoService2" ref="demoService2"/>
+</beans>

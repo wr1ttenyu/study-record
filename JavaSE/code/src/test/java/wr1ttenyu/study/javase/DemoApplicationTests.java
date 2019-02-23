@@ -1,9 +1,6 @@
 package wr1ttenyu.study.javase;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -16,6 +13,18 @@ public class DemoApplicationTests {
         byte[] bytesEachCache = new byte[]{123};
         System.arraycopy(bytesbuffer4, 0, bytesEachCache, bytesEachCache.length, bytesbuffer4.length);
         System.out.println(bytesEachCache);
+    }
+
+    @Test
+    public void testIntegerTransmit() {
+        Integer test = new Integer(10000);
+        handleInteger(test);
+        System.out.println(test);
+    }
+
+    private void handleInteger(Integer test) {
+        test += 1;
+        System.out.println(test);
     }
 
     @Test
@@ -100,7 +109,7 @@ public class DemoApplicationTests {
             int i = 1 / 0;
         } /*catch (Exception e) {
             throw e;
-        } */finally {
+        } */ finally {
             /*return 2;*/
         }
     }
